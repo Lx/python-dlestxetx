@@ -50,7 +50,7 @@ Install this module from PyPI_ using pip_::
 
     pip install dlestxetx
 
-.. _PyPI: https://pypi.org/project/dlestxtex
+.. _PyPI: https://pypi.org/project/dlestxetx
 .. _pip: https://pip.pypa.io/
 
 
