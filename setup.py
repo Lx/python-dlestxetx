@@ -1,10 +1,12 @@
 from pathlib import Path
+from sys import argv
 
 import setuptools
 
 from dlestxetx import __version__
 
 README = Path(__file__).parent / 'README.rst'
+needs_pytest = {'pytest', 'test', 'ptr'}.intersection(argv)
 
 setuptools.setup(
     name='dlestxetx',
@@ -25,4 +27,6 @@ setuptools.setup(
     keywords='DLE STX ETX',
     py_modules=['dlestxetx'],
     python_requires='>=3.6, <4',
+    setup_requires=['pytest-runner'] if needs_pytest else [],
+    tests_require=['pytest'],
 )
