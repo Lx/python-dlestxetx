@@ -1,6 +1,13 @@
 ``dlestxetx``: DLE/STX/ETX packet encoder/decoder
 =================================================
 
+.. image:: https://travis-ci.org/Lx/python-dlestxetx.svg
+   :target: https://travis-ci.org/Lx/python-dlestxetx
+   :alt: build & test status
+.. image:: https://coveralls.io/repos/github/Lx/python-dlestxetx/badge.svg
+   :target: https://coveralls.io/github/Lx/python-dlestxetx
+   :alt: test coverage status
+
 **DLE/STX/ETX** is a `packet framing algorithm`_,
 used by some devices (such as Metlink LED passenger information displays)
 to transmit *data* as *packets* over a serial medium.
