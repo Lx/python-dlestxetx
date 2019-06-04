@@ -1,6 +1,9 @@
 ``dlestxetx``: DLE/STX/ETX packet encoder/decoder
 =================================================
 
+.. image:: https://img.shields.io/pypi/v/dlestxetx.svg
+   :target: https://pypi.org/project/dlestxetx
+   :alt: latest release on PyPI
 .. image:: https://travis-ci.org/Lx/python-dlestxetx.svg
    :target: https://travis-ci.org/Lx/python-dlestxetx
    :alt: build & test status
