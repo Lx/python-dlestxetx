@@ -64,6 +64,16 @@ Install this module from PyPI_ using pip_::
 .. _pip: https://pip.pypa.io/
 
 
+Changes
+-------
+
+1.0.1
+    Add support for Python 3.5.
+
+1.0.0
+    Initial release.
+
+
 Contribute
 ----------
 
