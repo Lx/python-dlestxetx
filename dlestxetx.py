@@ -72,7 +72,10 @@ def decode(packet: bytes) -> bytes:
     decoded = read(stream)
     extra_bytes = stream.getvalue()[stream.tell():]
     if extra_bytes:
-        raise ValueError(f'extraneous bytes from index {stream.tell()}: {extra_bytes!r}')
+        raise ValueError('extraneous bytes from index {}: {!r}'.format(
+            stream.tell(),
+            extra_bytes,
+        ))
     return decoded
 
 
@@ -95,14 +98,17 @@ def read(file: Union[RawIOBase, BytesIO]) -> bytes:
     """
     header = file.read(len(PACKET_HEADER))
     if header != PACKET_HEADER:
-        raise ValueError(f'found header {header!r} where {PACKET_HEADER!r} was expected')
+        raise ValueError('found header {!r} where {!r} was expected'.format(
+            header,
+            PACKET_HEADER,
+        ))
 
     decoded = bytearray()
     buffer = bytearray()
     while True:
         buffer += file.read(2 - len(buffer))
         if len(buffer) != 2:
-            raise ValueError(f'unexpected end of packet')
+            raise ValueError('unexpected end of packet')
         if buffer.startswith(DLE):
             if buffer == ESCAPED_DLE:
                 decoded += DLE
@@ -110,7 +116,11 @@ def read(file: Union[RawIOBase, BytesIO]) -> bytes:
             elif buffer == PACKET_FOOTER:
                 break
             else:
-                raise ValueError(f'found {bytes([buffer[1]])!r} where {ETX!r} or {DLE!r} was expected')
+                raise ValueError('found {!r} where {!r} or {!r} was expected'.format(
+                    bytes([buffer[1]]),
+                    ETX,
+                    DLE,
+                ))
         else:
             decoded += bytes([buffer.pop(0)])
 
