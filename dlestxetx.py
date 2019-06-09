@@ -26,7 +26,7 @@ and read packets directly from `file objects`_.
    https://docs.python.org/3/glossary.html#term-file-object
 """
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __all__ = ['encode', 'decode', 'read', '__version__']
 
 from io import RawIOBase, BytesIO
