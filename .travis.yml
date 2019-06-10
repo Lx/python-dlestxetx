@@ -7,6 +7,6 @@ python:
 install:
   - pip install coveralls
 script:
-  - coverage run --source=dlestxetx setup.py test
+  - coverage run --branch --source=dlestxetx setup.py test
 after_success:
   - coveralls
