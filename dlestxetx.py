@@ -81,7 +81,7 @@ def decode(packet: bytes) -> bytes:
 
 def read(file: Union[RawIOBase, BytesIO]) -> bytes:
     """
-    Read precisely one DLE/STX/ETX packet from a `file object`_.
+    Read precisely one DLE/STX/ETX packet from a :term:`file object`.
 
     :param file:
         a file object with a ``read(num_bytes)`` method.
@@ -92,9 +92,6 @@ def read(file: Union[RawIOBase, BytesIO]) -> bytes:
     :raises ValueError:
         if the data from the supplied file object doesn't start with a packet,
         or doesn't follow with a complete, valid packet.
-
-    .. _file object:
-       https://docs.python.org/3/glossary.html#term-file-object
     """
     header = file.read(len(PACKET_HEADER))
     if header != PACKET_HEADER:
